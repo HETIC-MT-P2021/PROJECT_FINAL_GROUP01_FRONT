@@ -1,17 +1,40 @@
 import React, { Component } from "react";
 import { Fade, Slide } from "react-reveal";
 
+const projectContributors = [
+  {
+    name: "Meriem Mrabent",
+    url: "https://github.com/myouuu",
+  },
+  {
+    name: "Alexis Cauchois",
+    url: "https://github.com/acauchois",
+  },
+  {
+    name: "Fayçal Toure",
+    url: "https://github.com/FaycalTOURE",
+  },
+  {
+    name: "Jean-Jacques Akakpo",
+    url: "https://github.com/gensjaak",
+  },
+];
+
 class Contact extends Component {
   render() {
     if (!this.props.data) return null;
 
-    const name = this.props.data.name;
-    const street = this.props.data.address.street;
-    const city = this.props.data.address.city;
-    const state = this.props.data.address.state;
-    const zip = this.props.data.address.zip;
-    const phone = this.props.data.phone;
     const message = this.props.data.contactmessage;
+
+    const contributors = projectContributors.map(function (contributor) {
+      return (
+        <li key={contributor.name}>
+          <a href={contributor.url}>
+            <span>{contributor.name}</span>
+          </a>
+        </li>
+      );
+    });
 
     return (
       <section id="contact">
@@ -80,7 +103,7 @@ class Contact extends Component {
                     </label>
                     <textarea
                       cols="50"
-                      rows="15"
+                      rows="5"
                       id="contactMessage"
                       name="contactMessage"
                     ></textarea>
@@ -107,17 +130,8 @@ class Contact extends Component {
             <aside className="four columns footer-widgets">
               <div className="widget widget_contact">
                 <h4>Project Contributors</h4>
-                <p className="address">
-                  {name}
-                  <br />
-                  {street} <br />
-                  {city}, {state} {zip}
-                  <br />
-                  <span>{phone}</span>
-                </p>
+                <ul>{contributors}</ul>
               </div>
-
-
             </aside>
           </Slide>
         </div>

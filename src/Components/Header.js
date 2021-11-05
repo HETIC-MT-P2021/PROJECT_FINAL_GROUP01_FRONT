@@ -37,14 +37,14 @@ class Header extends Component {
             </li>
 
             <li>
-              <a className="smoothscroll" href="#resume">
-                Best Game
+              <a className="smoothscroll" href="#bestplayers">
+                Best Players
               </a>
             </li>
 
             <li>
-              <a className="smoothscroll" href="#portfolio">
-                Last Game
+              <a className="smoothscroll" href="#longestgames">
+                Longest Games
               </a>
             </li>
 

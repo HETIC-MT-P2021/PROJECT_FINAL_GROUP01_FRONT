@@ -5,16 +5,8 @@ class About extends Component {
   render() {
     if (!this.props.data) return null;
 
-    const name = this.props.data.name;
     const profilepic = "images/" + this.props.data.image;
     const bio = this.props.data.bio;
-    const street = this.props.data.address.street;
-    const city = this.props.data.address.city;
-    const state = this.props.data.address.state;
-    const zip = this.props.data.address.zip;
-    const phone = this.props.data.phone;
-    const email = this.props.data.email;
-    const resumeDownload = this.props.data.resumedownload;
 
     return (
       <section id="about">
@@ -28,27 +20,40 @@ class About extends Component {
               />
             </div>
             <div className="nine columns main-col">
-              <h2>About Dimo</h2>
+              <h2>About dimo</h2>
 
               <p>{bio}</p>
               <div className="row">
-                <div className="columns contact-details">
-                  <h2>Project contributors</h2>
-                  <p className="address">
-                    <span>{name}</span>
+                <div className="columns w-50">
+                  <h2>Contributors</h2>
+                  <p>
+                    <a href="https://github.com/myouuu">
+                      <span>Meriem Mrabent</span>
+                    </a>
                     <br />
-                    <span>
-                      {street}
-                      <br />
-                      {city} {state}, {zip}
-                    </span>
+                    <a href="https://github.com/acauchois">
+                      <span>Alexis Cauchois</span>
+                    </a>
                     <br />
-                    <span>{phone}</span>
+                    <a href="https://github.com/FaycalTOURE">
+                      <span>Fayçal Toure</span>
+                    </a>
                     <br />
-                    <span>{email}</span>
+                    <a href="https://github.com/gensjaak">
+                      <span>Jean-Jacques Akakpo</span>
+                    </a>
                   </p>
                 </div>
-
+                <div className="columns w-50">
+                  <h2>Tools</h2>
+                  <p>
+                    <span>GoLang</span>
+                    <br />
+                    <span>DiscordGo</span>
+                    <br />
+                    <span>PostgreSQL</span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>

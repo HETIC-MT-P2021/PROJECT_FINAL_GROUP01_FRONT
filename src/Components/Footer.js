@@ -26,7 +26,10 @@ class Footer extends Component {
                 <li>&copy; Copyright 2021 Dimo</li>
                 <li>
                   Design by{" "}
-                  <a title="Group1">
+                  <a
+                    href="https://github.com/HETIC-MT-P2021/PROJECT_FINAL_GROUP01_FRONT"
+                    title="Group1"
+                  >
                     Groupe1
                   </a>
                 </li>

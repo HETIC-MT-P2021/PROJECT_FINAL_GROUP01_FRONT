@@ -6,7 +6,6 @@ class About extends Component {
     if (!this.props.data) return null;
 
     const profilepic = "images/" + this.props.data.image;
-    const bio = this.props.data.bio;
 
     return (
       <section id="about">

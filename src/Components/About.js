@@ -22,7 +22,6 @@ class About extends Component {
             <div className="nine columns main-col">
               <h2>About dimo</h2>
 
-              <p>{bio}</p>
               <div className="row">
                 <div className="columns w-50">
                   <h2>Contributors</h2>
@@ -47,7 +46,7 @@ class About extends Component {
                 <div className="columns w-50">
                   <h2>Tools</h2>
                   <p>
-                    <span>GoLang</span>
+                    <span>Go</span>
                     <br />
                     <span>DiscordGo</span>
                     <br />

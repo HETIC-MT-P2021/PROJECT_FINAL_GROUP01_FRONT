@@ -62,7 +62,7 @@ class Resume extends Component {
         <div key={player.id}>
           <h3>{player.name}</h3>
           <p className="info">
-            {player.gamesCount} game parties <span>&bull;</span>
+            {player.gamesCount} games -{" "}
             <em className="date">{player.lastGameDate}</em>
           </p>
         </div>
@@ -76,8 +76,8 @@ class Resume extends Component {
             Game #{game.id} on {game.server} server
           </h3>
           <p className="info">
-            {game.playersCount} players
-            <span>&bull;</span> <em className="date">{game.gameStartedAt}</em>
+            {game.playersCount} players -{" "}
+            <em className="date">{game.gameStartedAt}</em>
           </p>
         </div>
       );

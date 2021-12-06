@@ -1,8 +1,6 @@
 // Task API
-
-const url = 'tasks';
-const plural = 'tasks';
-const single = 'task';
+import {ApiCore} from "./core";
+const url = 'http://localhost:8080';
 
 // plural and single may be used for message logic if needed in the ApiCore class.
 
@@ -14,12 +12,10 @@ const apiTasks = new ApiCore({
     patch: true,
     delete: false,
     url: url,
-    plural: plural,
-    single: single
 });
 
 apiTasks.massUpdate = () => {
-    // Add custom api call logic here
+    // API logic
 }
 
-export apiTasks;
+export {apiTasks};

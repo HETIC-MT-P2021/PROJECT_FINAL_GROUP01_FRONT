@@ -1,47 +1,12 @@
 import React, { Component } from "react";
 import Slide from "react-reveal";
+import {apiProvider} from "../services/api/Utilities/provider";
 
+var games = apiProvider.getAll('games').then(data => data);
+var rounds = apiProvider.getAll('rounds').then(data => data);
 const gameAnalytics = {
-  bestPlayers: [
-    {
-      id: "IAZ90128X",
-      name: "acauchois",
-      gamesCount: 124,
-      lastGameDate: "yesterday",
-    },
-    {
-      id: "JJUAZ8109E",
-      name: "meriem",
-      gamesCount: 87,
-      lastGameDate: "today",
-    },
-    {
-      id: "A91IS8XAZII",
-      name: "gensjaak",
-      gamesCount: 90,
-      lastGameDate: "october, 23th 2021",
-    },
-  ],
-  longestGame: [
-    {
-      id: 36,
-      server: "HETIC-MT4",
-      gameStartedAt: "november, 2nd 2021",
-      playersCount: 4,
-    },
-    {
-      id: 23,
-      server: "DIMO-HQ",
-      gameStartedAt: "november, 4th 2021",
-      playersCount: 3,
-    },
-    {
-      id: 189,
-      server: "WordChainArena",
-      gameStartedAt: "yesterday",
-      playersCount: 5,
-    },
-  ],
+  bestPlayers:  games,
+  longestGame:  rounds,
 };
 
 class Resume extends Component {
@@ -59,26 +24,18 @@ class Resume extends Component {
 
     const bestPlayers = gameAnalytics.bestPlayers.map(function (player) {
       return (
-        <div key={player.id}>
+        <div key={player.player_id}>
           <h3>{player.name}</h3>
-          <p className="info">
-            {player.gamesCount} games -{" "}
-            <em className="date">{player.lastGameDate}</em>
-          </p>
         </div>
       );
     });
 
     const longestGames = gameAnalytics.longestGame.map(function (game) {
       return (
-        <div key={game.id}>
+        <div key={game.game_id}>
           <h3>
-            Game #{game.id} on {game.server} server
+            Game #{game.game_id} server
           </h3>
-          <p className="info">
-            {game.playersCount} players -{" "}
-            <em className="date">{game.gameStartedAt}</em>
-          </p>
         </div>
       );
     });
